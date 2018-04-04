@@ -11,6 +11,11 @@ export class UsersPage {
   constructor(private navCtrl: NavController) {}
 
   onLoadUser(name: string) {
-    this.navCtrl.push(UserPage, {userName: name});
+    this.navCtrl.push(UserPage, {userName: name}, {
+      animate: true,
+      direction: 'forward',
+      duration: 3000,
+      easing: 'ease-out'
+    });
   }
 }
