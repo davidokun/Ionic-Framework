@@ -18,4 +18,45 @@ export class UsersPage {
       easing: 'ease-out'
     });
   }
+
+  ionViewCanEnter(): boolean | Promise<boolean> {
+    console.log("CanEnter");
+    const rnd = Math.random();
+    return rnd > 0.5;
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad');
+  }
+
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter');
+  }
+
+  ionViewCanLeave(): boolean | Promise<boolean> {
+    console.log('ionViewCanLeave');
+
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve()
+      }, 1000);
+    });
+
+    return promise;
+  }
+
+  ionViewWillLeave() {
+    console.log('ionViewWillLeave');
+  }
+
+  ionViewDidLeave() {
+    console.log('ionViewDidLeave');
+  }
+
+  ionViewWillUnload() {
+    console.log('ionViewWillUnload');
+  }
+
+
+
 }
