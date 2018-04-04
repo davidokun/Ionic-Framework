@@ -12,6 +12,7 @@ import {UsersPage} from "../pages/users/users";
   declarations: [
     MyApp,
     HomePage,
+    UsersPage,
     UsersPage
   ],
   imports: [
@@ -22,6 +23,7 @@ import {UsersPage} from "../pages/users/users";
   entryComponents: [
     MyApp,
     HomePage,
+    UsersPage,
     UsersPage
   ],
   providers: [
