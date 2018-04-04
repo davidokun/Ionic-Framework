@@ -15,3 +15,7 @@ Ionic Framework workshops
 ### Run Prpject 
 
 `ionic serve`
+
+### Create Page
+
+`ionic generate page {page-name}`
