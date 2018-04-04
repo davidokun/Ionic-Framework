@@ -7,12 +7,15 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>shop</ion-title>
+    <ion-title>Welcome to the Shop!!</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <p>Please select your product</p>
+  <button ion-button (click)="onGoToBuyout('Eggs', '$5')">Eggs - $5</button>
+  <button ion-button (click)="onGoToBuyout('Milk', '$6.5')">Milk - $6.5</button>
+  <button ion-button (click)="onGoToBuyout('Bread', '$3')">Bread - $3</button>
 </ion-content>
