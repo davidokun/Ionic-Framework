@@ -9,13 +9,13 @@ import {Quote} from "../../data/quote.interface";
 })
 export class QuotesPage implements OnInit{
 
-  quote: { category: string, quotes: Quote[], icon: string };
+  quotes: { category: string, quotes: Quote[], icon: string };
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ngOnInit(): void {
-    this.quote = this.navParams.data;
+    this.quotes = this.navParams.data;
   }
 
   // ionViewDidLoad() {
