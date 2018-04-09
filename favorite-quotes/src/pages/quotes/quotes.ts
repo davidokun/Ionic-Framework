@@ -24,5 +24,7 @@ export class QuotesPage implements OnInit{
   // }
 
 
+  onAddToFavorite(quote: Quote) {
 
+  }
 }
