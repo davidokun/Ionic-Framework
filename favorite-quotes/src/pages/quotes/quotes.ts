@@ -58,6 +58,6 @@ export class QuotesPage implements OnInit{
   }
 
   isFavorite(quote: Quote) {
-    this.quoteService.isQuoteFavorite(quote);
+    return this.quoteService.isQuoteFavorite(quote);
   }
 }
