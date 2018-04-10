@@ -8,12 +8,19 @@ import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular
 })
 export class QuotePage {
 
+  person: string;
+  text: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private viewCtrl: ViewController) {
   }
 
-  onClose() {
-    this.viewCtrl.dismiss();
+  ionViewDidLoad() {
+    this.person = this.navParams.get('person');
+    this.text = this.navParams.get('text');
   }
 
+  onCloseModal() {
+    this.viewCtrl.dismiss();
+  }
 }
