@@ -20,7 +20,7 @@ export class QuotePage {
     this.text = this.navParams.get('text');
   }
 
-  onCloseModal() {
-    this.viewCtrl.dismiss();
+  onCloseModal(remove = false) {
+    this.viewCtrl.dismiss(remove);
   }
 }

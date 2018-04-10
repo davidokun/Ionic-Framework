@@ -25,5 +25,8 @@ export class FavoritesPage {
   onViewQuote(quote: Quote) {
     const modal = this.modalCtrl.create(QuotePage, quote);
     modal.present();
+    modal.onDidDismiss((remove: boolean) => {
+
+    });
   }
 }
