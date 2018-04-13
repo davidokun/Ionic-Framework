@@ -11,4 +11,8 @@ export class HomePage {
 
   }
 
+  onClick() {
+    console.log('Clicked!')
+  }
+
 }

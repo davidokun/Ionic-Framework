@@ -7,8 +7,58 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <button
+    ion-button
+    color="secondary"
+    (click)="onClick()">A Button</button>
+
+  <button
+    ion-button
+    outline
+    (click)="onClick()">Outline Button</button>
+
+  <button
+    ion-button
+    clear
+    (click)="onClick()">clear Button</button>
+
+  <button
+    ion-button
+    round
+    (click)="onClick()">Round Button</button>
+
+  <button
+    ion-button
+    block
+    (click)="onClick()">Block Button</button>
+
+  <button
+    ion-button
+    small
+    block
+    (click)="onClick()">Small Button</button>
+
+  <button
+    ion-button
+    large
+    block
+    (click)="onClick()">Large Button</button>
+
+  <button
+    ion-button
+    block
+    icon-only=""
+    (click)="onClick()">
+    <ion-icon name="home"></ion-icon>
+  </button>
+
+  <button
+    ion-button
+    block
+    icon-start
+    (click)="onClick()">
+    <ion-icon name="home"></ion-icon>
+    Hone
+  </button>
+
 </ion-content>
