@@ -7,12 +7,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {ListPage} from "../pages/list/list";
+import {TouchEventComponent} from "../components/touch-event.component";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    TouchEventComponent
   ],
   imports: [
     BrowserModule,
