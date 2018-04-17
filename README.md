@@ -19,3 +19,15 @@ Ionic Framework workshops
 ### Create Page
 
 `ionic generate page {page-name}`
+
+### Install IOS Platform
+
+`ionic cordova platform add ios`
+
+### Build IOS
+
+`ionic cordova build ios`
+
+### Run
+
+`ionic cordova run ios`
