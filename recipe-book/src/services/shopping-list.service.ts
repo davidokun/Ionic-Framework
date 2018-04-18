@@ -8,6 +8,7 @@ export class ShoppingListService {
 
   addIngredient(name: string, amount: number) {
     this.ingredients.push(new IngredientModel(name, amount));
+    console.log(this.ingredients);
   }
 
   addIngredients(items: IngredientModel[]) {

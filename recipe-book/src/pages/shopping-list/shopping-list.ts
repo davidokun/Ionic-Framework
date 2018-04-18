@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage } from 'ionic-angular';
 import {NgForm} from "@angular/forms";
+import {ShoppingListService} from "../../services/shopping-list.service";
 
 @IonicPage()
 @Component({
   selector: 'page-shopping-list',
-  templateUrl: 'shopping-list.html',
+  templateUrl: 'shopping-list.html'
 })
 export class ShoppingListPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(private shoppingListService: ShoppingListService) {}
 
   onAddItem(f: NgForm) {
-    console.log(f);
+    this.shoppingListService.addIngredient(f.value.iname, f.value.amount);
+    f.reset();
   }
 }
