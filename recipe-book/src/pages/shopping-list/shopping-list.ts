@@ -28,4 +28,9 @@ export class ShoppingListPage implements OnInit {
   private loadItems() {
     this.ingredients = this.shoppingListService.getIngredients();
   }
+
+  onRemoveItem(index: number) {
+    this.shoppingListService.removeIngredient(index);
+    this.loadItems();
+  }
 }

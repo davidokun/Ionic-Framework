@@ -31,7 +31,7 @@
         <ion-col>Amount</ion-col>
       </ion-row>
     </ion-list-header>
-    <ion-item *ngFor="let ingredient of ingredients">
+    <ion-item *ngFor="let ingredient of ingredients; let i = index" (click)="onRemoveItem(i)">
       <ion-row>
         <ion-col>{{ ingredient.name }}</ion-col>
         <ion-col>({{ ingredient.amount }})</ion-col>
