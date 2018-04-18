@@ -7,6 +7,7 @@
 </ion-header>
 
 <ion-content padding>
+
   <form #f="ngForm" (ngSubmit)="onAddItem(f)">
     <ion-list>
       <ion-item>
@@ -20,4 +21,22 @@
     </ion-list>
     <button ion-button type="submit" block [disabled]="!f.valid">Add</button>
   </form>
+
+  <hr>
+
+  <ion-list>
+    <ion-list-header *ngIf="ingredients.length > 0">
+      <ion-row>
+        <ion-col>Name</ion-col>
+        <ion-col>Amount</ion-col>
+      </ion-row>
+    </ion-list-header>
+    <ion-item *ngFor="let ingredient of ingredients">
+      <ion-row>
+        <ion-col>{{ ingredient.name }}</ion-col>
+        <ion-col>({{ ingredient.amount }})</ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
