@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {ShoppingListPage} from "../shopping-list/shopping-list";
+import {RecipesPage} from "../recipes/recipes";
 
 @IonicPage()
 @Component({
@@ -7,6 +9,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'tabs.html',
 })
 export class TabsPage {
+  shoppingPage = ShoppingListPage;
+  recipesPage = RecipesPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
