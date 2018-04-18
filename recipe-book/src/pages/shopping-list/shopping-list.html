@@ -1,12 +1,23 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>shopping-list</ion-title>
+  <ion-navbar text-center>
+    <ion-title>Shopping List</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
-
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-input type="text" name="iname"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Amount</ion-label>
+        <ion-input type="number" name="amount"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button type="submit" block>Add</button>
+  </form>
 </ion-content>
