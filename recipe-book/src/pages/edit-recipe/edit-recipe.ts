@@ -32,7 +32,7 @@ export class EditRecipePage implements OnInit {
         {
           text: 'Add Ingredient',
           handler: () => {
-
+            this.createNewIngredientAlert().present();
           }
         },
         {
@@ -48,10 +48,12 @@ export class EditRecipePage implements OnInit {
         }
       ]
     });
+
+    actionSheet.present();
   }
 
   private createNewIngredientAlert() {
-    const newIngredientAlert = this.alertCtrl.create({
+    return this.alertCtrl.create({
       title: 'Add Ingredient',
       inputs: [
         {
@@ -68,12 +70,15 @@ export class EditRecipePage implements OnInit {
           text: 'Add',
           handler: data => {
             if (data.name.trim() == '' || data.name == null) {
-
+              return;
             }
+            (<FormArray> this.recipeForm.get('ingredients'))
+              .push(new FormControl(data.name, Validators.required));
           }
         }
       ]
     });
+
   }
 
   private initializeForm() {
