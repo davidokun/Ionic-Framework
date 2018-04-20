@@ -12,8 +12,8 @@ export class RecipesService {
     console.log(this.recipes);
   }
 
-  getRecipes() {
-    this.recipes.slice();
+  getRecipes(): RecipeModel[] {
+    return this.recipes.slice();
   }
 
   updateRecipe(index: number, title: string, description: string,
