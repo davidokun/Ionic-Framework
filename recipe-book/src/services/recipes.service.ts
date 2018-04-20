@@ -9,6 +9,7 @@ export class RecipesService {
             difficulty: string, ingredients: IngredientModel[]) {
 
     this.recipes.push(new RecipeModel(title, description, difficulty, ingredients));
+    console.log(this.recipes);
   }
 
   getRecipes() {
