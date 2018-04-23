@@ -25,7 +25,7 @@
   <hr>
 
   <ion-list>
-    <ion-list-header *ngIf="ingredients.length > 0">
+    <ion-list-header *ngIf="ingredients !== undefined && ingredients.length > 0">
       <ion-row>
         <ion-col>Name</ion-col>
         <ion-col>Amount</ion-col>
