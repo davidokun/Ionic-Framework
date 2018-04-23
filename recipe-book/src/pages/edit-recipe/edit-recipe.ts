@@ -40,12 +40,18 @@ export class EditRecipePage implements OnInit {
   onSubmit() {
     const value = this.recipeForm.value;
     let ingredients = [];
+
     if (value.ingredients.length > 0) {
       ingredients = value.ingredients.map(name => {
         return {name: name, amount: 1}
       });
     }
-    this.recipesService.addRecipe(value.title, value.description, value.difficulty, ingredients);
+
+    if (this.mode === 'Edit') {
+      this.recipesService.updateRecipe(this.index, value.title, value.description, value.difficulty, ingredients);
+    } else {
+      this.recipesService.addRecipe(value.title, value.description, value.difficulty, ingredients);
+    }
     this.navCtrl.popToRoot();
   }
 
@@ -121,7 +127,7 @@ export class EditRecipePage implements OnInit {
   private initializeForm() {
     let title = null;
     let description = null;
-    let difficulty = null;
+    let difficulty = this.selectOptions[1];
     let ingredients = [];
 
     if (this.mode === 'Edit') {
