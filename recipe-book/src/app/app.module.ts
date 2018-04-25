@@ -21,6 +21,7 @@ import {SigninPage} from "../pages/signin/signin";
 import {SignupPage} from "../pages/signup/signup";
 import {SigninPageModule} from "../pages/signin/signin.module";
 import {SignupPageModule} from "../pages/signup/signup.module";
+import {AuthService} from "../services/auth.service";
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {SignupPageModule} from "../pages/signup/signup.module";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ShoppingListService,
-    RecipesService
+    RecipesService,
+    AuthService
   ]
 })
 export class AppModule {}
