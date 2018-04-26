@@ -24,6 +24,7 @@ import {SignupPageModule} from '../pages/signup/signup.module';
 import {AuthService} from '../services/auth.service';
 import {SlOptionsPageModule} from '../pages/shopping-list/sl-options/sl-options.module';
 import {SlOptionsPage} from '../pages/shopping-list/sl-options/sl-options';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {SlOptionsPage} from '../pages/shopping-list/sl-options/sl-options';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     EditRecipePageModule,
     RecipePageModule,
     RecipesPageModule,

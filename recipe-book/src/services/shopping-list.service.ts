@@ -1,10 +1,15 @@
 import {Injectable} from "@angular/core";
 import {IngredientModel} from "../models/ingredient.model";
+import {HttpClient} from "@angular/common/http";
+import {AuthService} from "./auth.service";
 
 @Injectable()
 export class ShoppingListService {
 
   private ingredients: IngredientModel[] = [];
+
+  constructor(private httpClient: HttpClient,
+              private authService: AuthService) {}
 
   addIngredient(name: string, amount: number) {
     this.ingredients.push(new IngredientModel(name, amount));
@@ -21,6 +26,12 @@ export class ShoppingListService {
 
   removeIngredient(index: number) {
     this.ingredients.splice(index, 1);
+  }
+
+  storeList(token: string) {
+    const userId = this.authService.getActiveUser().uid;
+    return this.httpClient.put('https://ionic-recipe-book-9998e.firebaseio.com/'
+      + userId + '/shopping-list.json?auth=' + token, this.ingredients);
   }
 
 }
