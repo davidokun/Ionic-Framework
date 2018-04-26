@@ -17,11 +17,13 @@ import {ShoppingListPage} from '../pages/shopping-list/shopping-list';
 import {TabsPage} from '../pages/tabs/tabs';
 import {ShoppingListService} from '../services/shopping-list.service';
 import {RecipesService} from '../services/recipes.service';
-import {SigninPage} from "../pages/signin/signin";
-import {SignupPage} from "../pages/signup/signup";
-import {SigninPageModule} from "../pages/signin/signin.module";
-import {SignupPageModule} from "../pages/signup/signup.module";
-import {AuthService} from "../services/auth.service";
+import {SigninPage} from '../pages/signin/signin';
+import {SignupPage} from '../pages/signup/signup';
+import {SigninPageModule} from '../pages/signin/signin.module';
+import {SignupPageModule} from '../pages/signup/signup.module';
+import {AuthService} from '../services/auth.service';
+import {SlOptionsPageModule} from '../pages/shopping-list/sl-options/sl-options.module';
+import {SlOptionsPage} from '../pages/shopping-list/sl-options/sl-options';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import {AuthService} from "../services/auth.service";
     TabsPageModule,
     SigninPageModule,
     SignupPageModule,
+    SlOptionsPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -47,7 +50,8 @@ import {AuthService} from "../services/auth.service";
     ShoppingListPage,
     TabsPage,
     SigninPage,
-    SignupPage
+    SignupPage,
+    SlOptionsPage,
   ],
   providers: [
     StatusBar,
