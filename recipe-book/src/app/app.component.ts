@@ -52,6 +52,7 @@ export class MyApp {
   onLogout() {
     this.authService.logOut();
     this.menuCtrl.close();
+    this.nav.setRoot(SigninPage);
   }
 }
 
