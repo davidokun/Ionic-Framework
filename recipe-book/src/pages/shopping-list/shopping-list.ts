@@ -66,7 +66,7 @@ export class ShoppingListPage {
                     },
                     error => {
                       loading.dismiss();
-                      this.handleError(error.message);
+                      this.handleError(error.error.error);
                     }
                   );
               }
@@ -83,7 +83,7 @@ export class ShoppingListPage {
                     () => loading.dismiss(),
                     error => {
                       loading.dismiss();
-                      this.handleError(error.message);
+                      this.handleError(error.error.error);
                     }
                   );
               }
