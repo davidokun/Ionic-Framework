@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {NgForm} from "@angular/forms";
 
 @IonicPage()
 @Component({
@@ -11,4 +12,19 @@ export class AddPlacePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  onLocate() {
+
+  }
+
+  onOpenMap() {
+
+  }
+
+  onTakePhoto() {
+
+  }
+
+  onSubmit(form: NgForm) {
+    console.log(form.value);
+  }
 }
