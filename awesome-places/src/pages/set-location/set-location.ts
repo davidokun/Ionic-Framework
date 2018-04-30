@@ -10,9 +10,13 @@ import {LocationModel} from "../../models/location.model";
 export class SetLocationPage {
 
   location: LocationModel;
+  marker: LocationModel;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.location = this.navParams.get('location');
   }
 
+  onSetMarker(event: any) {
+    this.marker = new LocationModel(event.coords.lat, event.coords.lng);
+  }
 }
