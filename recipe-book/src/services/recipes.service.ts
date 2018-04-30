@@ -3,6 +3,7 @@ import {IngredientModel} from '../models/ingredient.model';
 import {HttpClient} from "@angular/common/http";
 import {AuthService} from "./auth.service";
 import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/map';
 import {Injectable} from "@angular/core";
 
 @Injectable()
@@ -44,6 +45,16 @@ export class RecipesService {
     const userId = this.authService.getActiveUser().uid;
     return this.httpClient.get<RecipeModel[]>('https://ionic-recipe-book-9998e.firebaseio.com/'
       + userId + '/recipes.json?auth=' + token)
+      .map(data => {
+        const recipes: RecipeModel[] = data ? data : [];
+        for (let item of recipes) {
+          if (!item.hasOwnProperty('ingredients')){
+            item.ingredients = [];
+          }
+        }
+
+        return recipes;
+      })
       .do(data => {
         this.recipes = data;
       });
