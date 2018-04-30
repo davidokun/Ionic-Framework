@@ -22,8 +22,8 @@ import {SignupPage} from '../pages/signup/signup';
 import {SigninPageModule} from '../pages/signin/signin.module';
 import {SignupPageModule} from '../pages/signup/signup.module';
 import {AuthService} from '../services/auth.service';
-import {SlOptionsPageModule} from '../pages/shopping-list/sl-options/sl-options.module';
-import {SlOptionsPage} from '../pages/shopping-list/sl-options/sl-options';
+import {DatabaseOptionsPageModule} from '../pages/database-options/database-options.module';
+import {DatabaseOptionsPage} from '../pages/database-options/database-options';
 import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
@@ -40,7 +40,7 @@ import {HttpClientModule} from "@angular/common/http";
     TabsPageModule,
     SigninPageModule,
     SignupPageModule,
-    SlOptionsPageModule,
+    DatabaseOptionsPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -53,7 +53,7 @@ import {HttpClientModule} from "@angular/common/http";
     TabsPage,
     SigninPage,
     SignupPage,
-    SlOptionsPage,
+    DatabaseOptionsPage,
   ],
   providers: [
     StatusBar,

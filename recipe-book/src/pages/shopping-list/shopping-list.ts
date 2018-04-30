@@ -3,7 +3,7 @@ import {AlertController, IonicPage, LoadingController, PopoverController} from '
 import {NgForm} from '@angular/forms';
 import {ShoppingListService} from '../../services/shopping-list.service';
 import {IngredientModel} from '../../models/ingredient.model';
-import {SlOptionsPage} from './sl-options/sl-options';
+import {DatabaseOptionsPage} from '../database-options/database-options';
 import {AuthService} from '../../services/auth.service';
 
 @IonicPage()
@@ -45,7 +45,7 @@ export class ShoppingListPage {
       content: 'Loading items....'
     });
 
-    const popover = this.popoverCtrl.create(SlOptionsPage);
+    const popover = this.popoverCtrl.create(DatabaseOptionsPage);
     popover.present({ev: event});
     popover.onDidDismiss(
       data => {
@@ -73,7 +73,7 @@ export class ShoppingListPage {
             )
             .catch();
 
-        } else if (data.action === 'store') {
+        } else if (data.action === 'save') {
           loading.present();
           this.authService.getActiveUser().getToken()
             .then(
