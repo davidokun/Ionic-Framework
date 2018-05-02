@@ -26,6 +26,7 @@ export class AddPlacePage {
     correctOrientation: true,
     encodingType: this.camera.EncodingType.JPEG,
   };
+  imageUrl = '';
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private modalCtrl: ModalController,
@@ -82,7 +83,7 @@ export class AddPlacePage {
     this.camera.getPicture(this.options)
       .then(
         imageData => {
-          console.log(imageData);
+          this.imageUrl = imageData
         }
       )
       .catch(
