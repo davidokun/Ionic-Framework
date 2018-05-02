@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
 import {NgForm} from "@angular/forms";
+import {Geolocation} from '@ionic-native/geolocation';
+
 import {SetLocationPage} from "../set-location/set-location";
 import {LocationModel} from "../../models/location.model";
 
@@ -19,10 +21,24 @@ export class AddPlacePage {
   locationIsSet = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              private modalCtrl: ModalController) {
+              private modalCtrl: ModalController,
+              private geolocation: Geolocation) {
   }
 
   onLocate() {
+    this.geolocation.getCurrentPosition()
+      .then(
+        location => {
+          this.location.lat = location.coords.latitude;
+          this.location.lng = location.coords.longitude;
+          this.locationIsSet = true;
+        }
+      )
+      .catch(
+        error => {
+          console.log(error)
+        }
+      )
 
   }
 
