@@ -7,12 +7,13 @@ import {Geolocation} from '@ionic-native/geolocation';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import {PlacePageModule} from "../pages/place/place.module";
-import {AddPlacePageModule} from "../pages/add-place/add-place.module";
-import {SetLocationPageModule} from "../pages/set-location/set-location.module";
-import {PlacePage} from "../pages/place/place";
-import {AddPlacePage} from "../pages/add-place/add-place";
-import {SetLocationPage} from "../pages/set-location/set-location";
+import {PlacePageModule} from '../pages/place/place.module';
+import {AddPlacePageModule} from '../pages/add-place/add-place.module';
+import {SetLocationPageModule} from '../pages/set-location/set-location.module';
+import {PlacePage} from '../pages/place/place';
+import {AddPlacePage} from '../pages/add-place/add-place';
+import {SetLocationPage} from '../pages/set-location/set-location';
+import {PlacesService} from '../services/places.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {SetLocationPage} from "../pages/set-location/set-location";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Geolocation
+    Geolocation,
+    PlacesService
   ]
 })
 export class AppModule {}
