@@ -23,8 +23,8 @@ export class HomePage {
     this.places = this.placesService.loadPlaces();
   }
 
-  onOpenPlace(place: PlaceModel) {
-    const modal = this.modalCtrl.create(PlacePage, {place: place});
+  onOpenPlace(place: PlaceModel, index: number) {
+    const modal = this.modalCtrl.create(PlacePage, {place: place, index: index});
     modal.present();
   }
 }
