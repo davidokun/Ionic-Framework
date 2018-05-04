@@ -47,9 +47,10 @@ export class PlacesService {
   }
 
   fetchPlaces() {
-    this.storage.get('places')
+    return this.storage.get('places')
       .then((places: PlaceModel[]) => {
-        this.places = places != null ? places : []
+        this.places = places != null ? places : [];
+        return this.places.slice();
       })
       .catch(error => {
         const toast = this.toastCtrl.create({
