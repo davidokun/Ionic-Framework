@@ -14,6 +14,8 @@ import {PlacePage} from '../pages/place/place';
 import {AddPlacePage} from '../pages/add-place/add-place';
 import {SetLocationPage} from '../pages/set-location/set-location';
 import {PlacesService} from '../services/places.service';
+import { IonicStorageModule } from '@ionic/storage';
+import {File} from '@ionic-native/file';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import {PlacesService} from '../services/places.service';
     PlacePageModule,
     AddPlacePageModule,
     SetLocationPageModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -40,7 +43,8 @@ import {PlacesService} from '../services/places.service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Geolocation,
-    PlacesService
+    PlacesService,
+    File
   ]
 })
 export class AppModule {}
